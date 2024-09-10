@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('movies.home');
+        return view('movies.desc');
     }
 }

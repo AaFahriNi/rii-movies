@@ -6,10 +6,6 @@
             <div class="home-text">
                 <span>Marvel Universe</span>
                 <h1>Guardians of the Galaxy <br>Volume 2</h1>
-                <!-- <a href="" class="btn">Book Now</a>
-                <a href="" class="play">
-                    <i class='bx bx-play' ></i>
-                </a> -->
             </div>
         </div>
         <div class="swiper-slide container">
@@ -17,10 +13,6 @@
             <div class="home-text">
                 <span>Marvel Universe</span>
                 <h1>Thor: <br>Love and Thunder</h1>
-                <!-- <a href="" class="btn">Book Now</a>
-                <a href="" class="play">
-                    <i class='bx bx-play' ></i>
-                </a> -->
             </div>
         </div>
         <div class="swiper-slide container">
@@ -28,10 +20,6 @@
             <div class="home-text">
                 <span>Marvel Universe</span>
                 <h1>Spider-Man <br>No Way Home</h1>
-                <!-- <a href="" class="btn">Book Now</a>
-                <a href="" class="play">
-                    <i class='bx bx-play' ></i>
-                </a> -->
             </div>
         </div>
         <div class="swiper-slide container">
@@ -39,10 +27,6 @@
             <div class="home-text">
                 <span>Marvel Universe</span>
                 <h1>Avengers: <br>End Game</h1>
-                <!-- <a href="" class="btn">Book Now</a>
-                <a href="" class="play">
-                    <i class='bx bx-play' ></i>
-                </a> -->
             </div>
         </div>
         

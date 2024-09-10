@@ -20,5 +20,5 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Web')->group(function(){
     Route::get('/', 'MoviesController@index')->name('/');
     
-    Route::get('movie-desc', 'HomeController@index')->name('movie.show');
+    Route::get('movie-desc/{id}', 'HomeController@show')->name('movie.show');
 });

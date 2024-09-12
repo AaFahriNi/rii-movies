@@ -21,4 +21,5 @@ Route::namespace('Web')->group(function(){
     Route::get('/', 'MoviesController@index')->name('/');
     
     Route::get('movie-desc/{id}', 'HomeController@show')->name('movie.show');
+    Route::get('search', 'HomeController@search')->name('movie.search');
 });

@@ -9,6 +9,51 @@ use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $apiKey = env('TMDB_API_KEY');
+
+        // Cek apakah query ada
+        if (!$query) {
+            return redirect()->back()->with('error', 'Please enter a search query.');
+        }
+
+        // Panggil API TMDB untuk mencari film berdasarkan query
+        $response = Http::get("https://api.themoviedb.org/3/search/movie", [
+            'api_key' => $apiKey,
+            'query' => $query,
+        ]);
+
+        // Cek apakah respons dari API berhasil
+        if ($response->successful()) {
+            $movies = $response->json()['results']; // Ambil hasil pencarian
+
+            // Untuk setiap film, ambil detail termasuk durasi
+            foreach ($movies as &$movie) {
+                $movieDetailsResponse = Http::get("https://api.themoviedb.org/3/movie/{$movie['id']}", [
+                    'api_key' => $apiKey,
+                    'language' => 'en-US',
+                ]);
+
+                if ($movieDetailsResponse->successful()) {
+                    $movieDetails = $movieDetailsResponse->json();
+                    $movie['runtime'] = $movieDetails['runtime']; // Tambahkan durasi film ke data film
+                } else {
+                    $movie['runtime'] = 'N/A'; // Jika tidak dapat mengambil detail, tetapkan 'N/A'
+                }
+            }
+        } else {
+            return redirect()->back()->with('error', 'Error fetching movies from TMDB.');
+        }
+
+        // Kembalikan view dengan data film yang ditemukan
+        return view('movies.search-resault')->with('movies', $movies)
+                                            ->with('query', $query);
+
+    }
+
+
     public function show($id)
     {
         $apiKey = env('TMDB_API_KEY');
@@ -37,9 +82,8 @@ class HomeController extends Controller
             return $genresMap;
         });
 
-        return view('movies.desc', [
-            'movie' => $movie,
-            'genresMap' => $genresMap,
-        ]);
+        // Kembalikan view dengan data film yang ditemukan
+        return view('movies.desc')->with('movie', $movie)
+                                  ->with('genresMap', $genresMap);
     }
 }

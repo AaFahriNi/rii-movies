@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+
+/* Global Style */
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #1a202c;
+    color: white;
+    height: 100vh;
+}
+
+/* variables  */
+:root{
+    --main-color: #ff2c1f;
+    --text-color: #020307;
+    --bg-color: #fff;
+}
+
+body{
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 100px;
+    transition: 0.5s;
+}
+header.shadow{
+    background: var(--bg-color);
+    box-shadow: 0 0 4px rgb(14 55 54/15%);
+}
+header.shadow .navbar a{
+    color: var(--text-color);
+}
+header.shadow .logo{
+    color: var(--text-color);
+}
+header.shadow .search-input {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+}
+header.shadow .search-icon {
+    color: var(--text-color);
+}
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+header.shadow .search-input::placeholder {
+    color: rgba(2, 3, 7, 0.7);
+}
+
+
+/* Logo */
+.logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    align-items: center;
+    color: var(--bg-color);
+    display: flex;
+    column-gap: 0.5rem;
+}
+
+.bx {
+    color: var(--main-color);
+}
+
+header a:hover {
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px 8px 35px; /* Padding untuk memberikan ruang di sisi kiri untuk ikon */
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--bg-color);
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.search-icon {
+    position: absolute;
+    margin-left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px; /* Sesuaikan ukuran ikon */
+    color: var(--bg-color); /* Sesuaikan warna ikon */
+}
+
+/* Menu Button (for mobile) */
+.menu-button {
+    display: none;
+}
+
+/* Home  */
+section{
+    padding: 60px 4%;
+}
+
+/* movies  */
+.heading{
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--main-color);
+}
+.movies-container{
+    max-width: 968px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,auto));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.box .box-img{
+    width: 100%;
+    height: 270px;
+    cursor: pointer;
+}
+.box .box-img img{
+    /* width: 100%; */
+    height: 100%;
+    object-fit: cover;
+}
+.box .box-img img:hover{
+    transform: translateY(-10px);
+    transition: 0.2s all linear;
+}
+.box h3{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.box span{
+    font-size: 14px;
+}
+
+/* coming container  */
+.coming-container{
+    display: grid;
+    gap: 1rem;
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+.coming-container .box img:hover{
+    transform: translateY(0);
+}
+.coming-container .box img{
+    border-radius: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .heading {
+        margin-top: 5rem;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .search-input {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .search-icon {
+        margin-top: 17px;
+    }
+
+    /* .movies-container{
+        margin-top: 5rem;
+    } */
+
+    
+}
+
+@media (max-width: 991px){
+    section{
+        padding: 20px 4%;
+    }
+}
+
+@media (max-width: 472px){
+    header{
+        padding: 6px 4%;
+    }
+    .heading{
+        margin-top: 5rem;
+    }
+    .movies-container{
+        margin-top: 2rem;
+        margin-left: 25%;
+    }
+    .search-icon {
+        margin-top: 17px;
+    }
+}

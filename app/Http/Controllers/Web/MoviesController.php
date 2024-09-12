@@ -80,15 +80,12 @@ class MoviesController extends Controller
             return $upcomingResponse->json()['results'];
         });
 
-        
 
-        // Kirim semua data ke view
-        return view('movies.home', [
-            'genresMap' => $genresMap,
-            'popularMovies' => $popularMovies,
-            'thisWeekMovies' => $thisWeekMovies,
-            'trendingMovies' => $trendingMovies,
-            'upcomingMovies' => $upcomingMovies,
-        ]);
+        // Kembalikan view dengan data film yang ditemukan
+        return view('movies.home')->with('genresMap', $genresMap)
+                                  ->with('popularMovies', $popularMovies)
+                                  ->with('thisWeekMovies', $thisWeekMovies)
+                                  ->with('trendingMovies', $trendingMovies)
+                                  ->with('upcomingMovies', $upcomingMovies);
     }
 }

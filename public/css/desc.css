@@ -50,7 +50,6 @@ header a:hover {
 /* Search Container */
 .search-container {
     position: relative;
-    display: flex;
     align-items: center;
 }
 
@@ -74,6 +73,28 @@ header a:hover {
 
 .search-input::placeholder {
     color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px 8px 35px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--bg-color);
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--bg-color);
 }
 
 /* Menu Button (for mobile) */
@@ -188,6 +209,9 @@ h1 {
         left: 0;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
+    .movie-poster-wrapper {
+        margin-top: 8rem;
+    }
 }
 
 @media (min-width: 576px) {
@@ -219,7 +243,7 @@ h1 {
     
     .movie-poster-wrapper {
         margin-bottom: 0;
-        margin: 0 70px 0 25px;
+        margin: 2rem 70px 0 25px;
     }
 }
 

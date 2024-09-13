@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+
+/* Global Style */
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #1a202c;
+    color: white;
+    height: 100vh;
+}
+
+:root {
+    --main-color: #ff2c1f;
+    --text-color: #020307;
+    --bg-color: #fff;
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 100px;
+    transition: 0.5s;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    align-items: center;
+    color: var(--bg-color);
+    display: flex;
+    column-gap: 0.5rem;
+}
+
+.bx {
+    color: var(--main-color);
+}
+
+header a:hover {
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+/* Search Container */
+.search-container {
+    position: relative;
+    align-items: center;
+}
+
+/* Search Input */
+.search-input {
+    padding: 8px 12px 8px 35px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--bg-color);
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: var(--bg-color);
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px 8px 35px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--bg-color);
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--bg-color);
+}
+
+/* Menu Button (for mobile) */
+.menu-button {
+    display: none;
+}
+
+/* Background Image */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px) brightness(50%);
+    z-index: 0;
+}
+
+/* Content Container */
+.content-container {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Movie Poster */
+.movie-poster {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Movie Genres */
+.genre-badge {
+    background-color: #1c232e;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/* Responsive Text for Title */
+h1 {
+    font-size: 2rem;
+}
+
+/* Movie Overview Text */
+.overview-text {
+    font-size: 1rem;
+}
+
+/* Flexbox for Movie Details */
+.movie-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Margin between Movie Poster and Movie Details */
+.movie-poster-wrapper {
+    margin-bottom: 20px;
+}
+
+/* Space and Alignment */
+.gap-2 {
+    gap: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .search-input {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    
+    .menu-button {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--bg-color);
+        cursor: pointer;
+    }
+    
+    .mobile-menu {
+        display: block;
+        width: 100%;
+        background-color: var(--main-color);
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .movie-poster-wrapper {
+        margin-top: 8rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .movie-poster {
+        width: 250px;
+        height: 400px;
+    }
+}
+
+@media (min-width: 768px) {
+    .movie-poster {
+        width: 230px;
+        height: 350px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .overview-text {
+        font-size: 1rem;
+    }
+    
+    .movie-details {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .movie-poster-wrapper {
+        margin-bottom: 0;
+        margin: 2rem 70px 0 25px;
+    }
+}
+
+@media (min-width: 992px) {
+    .movie-poster {
+        width: 330px;
+        height: 530px;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .overview-text {
+        font-size: 1.25rem;
+    }
+}

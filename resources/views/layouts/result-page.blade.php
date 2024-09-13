@@ -15,7 +15,7 @@
 </head>
 <body>
     @include('components.header-desc')
-    @yield('content-resault')
+    @yield('content-result')
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="{{ asset('js/main.js') }}"></script>

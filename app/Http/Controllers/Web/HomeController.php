@@ -96,4 +96,32 @@ class HomeController extends Controller
         return view('movies.desc')->with('movie', $movie)
                                   ->with('genresMap', $genresMap);
     }
+
+
+    // public function searchSuggestions(Request $request)
+    // {
+    //     $query = $request->input('query');
+    //     $apiKey = env('TMDB_API_KEY');
+
+    //     // Cek apakah query ada
+    //     if (!$query) {
+    //         return response()->json([]);
+    //     }
+
+    //     // Panggil API TMDB untuk mencari film berdasarkan query
+    //     $response = Http::get("https://api.themoviedb.org/3/search/movie", [
+    //         'api_key' => $apiKey,
+    //         'query' => $query,
+    //     ]);
+
+    //     // Cek apakah respons dari API berhasil
+    //     if ($response->successful()) {
+    //         $movies = $response->json()['results'];
+
+    //         // Kembalikan hanya beberapa saran (misalnya, 5 saran)
+    //         return response()->json(array_slice($movies, 0, 5));
+    //     }
+
+    //     return response()->json([]);
+    // }
 }

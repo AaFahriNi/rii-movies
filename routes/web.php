@@ -18,8 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::namespace('Web')->group(function(){
-    Route::get('/', 'HomeController@index')->name('/');
-    
+    Route::get('/', 'HomeController@index')->name('/');    
     Route::get('movie-desc/{id}', 'HomeController@show')->name('movie.show');
     Route::get('search', 'HomeController@search')->name('movie.search');
     // Route::get('/search-suggestions', 'HomeController@searchSuggestions')->name('movie.searchSuggestions');

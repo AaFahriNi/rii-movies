@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $apiKey = env('TMDB_API_KEY');
+        $apiKey = config('services.tmdb.api_key');
 
         // Ambil daftar genre dengan cache
         $genresMap = Cache::remember('genres_map', 60, function () use ($apiKey) {
@@ -94,7 +94,7 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('query');
-        $apiKey = env('TMDB_API_KEY');
+        $apiKey = config('services.tmdb.api_key');
 
         // Cek apakah query ada
         if (!$query) {
@@ -148,7 +148,7 @@ class HomeController extends Controller
 
     public function show($id)
     {
-        $apiKey = env('TMDB_API_KEY');
+        $apiKey = config('services.tmdb.api_key');
         
         // Cache movie details
         $movie = Cache::remember("movie_{$id}", 60, function () use ($id, $apiKey) {
@@ -183,7 +183,7 @@ class HomeController extends Controller
     // public function searchSuggestions(Request $request)
     // {
     //     $query = $request->input('query');
-    //     $apiKey = env('TMDB_API_KEY');
+    //     $apiKey = config('services.tmdb.api_key');
 
     //     // Cek apakah query ada
     //     if (!$query) {
